@@ -1,3 +1,14 @@
- /* .col-12-grid {
-   max-width: 1000px;
- } */
+
+/* Non-mobile grid */
+
+@media only screen and (min-width: 640px) {
+  /* 2 columns = 6/12= 50% */
+
+  .col-6-grid {
+      width: 50%;
+    }
+
+  .col-12-grid {
+     width: 100%;
+   }
+}

@@ -11,14 +11,14 @@
 <body>
   <main role="main">
     <header>Hair Quiz</header>
-    <div class="col-12-grid" id="page-1">
+    <div class="visibility col-12-grid" id="page-1">
       <div class="intro-statement">
         <h2>How well do you know your hair?</h2>
       </div>
       <div class="intro-statement">
         <span>select two</span>
       </div>
-      <div class="selection-container">
+      <div class="selection-container" class="col-6-grid">
         <div class="hair-length-container">
           <div class="card-short" class="option-1">
               <img src="images/short_hair.jpg" class="selection_images" alt="short hair"/>
@@ -54,6 +54,63 @@
        <div class="button-container">
          <button onclick="startQuiz()">Quiz Me</button>
       </div>
+    </div>
+
+<!--second "page" -->
+    <div class="visibility col-12-grid" id="page-2">
+      <div class="score_container">
+        <span class="question_number">Question 5/10</span>
+        <span class="correct_score">Correct: 3</span>
+      </div>
+      <div class="question-container">
+        <img src="images/shampoo.jpeg" class="question-image"/>
+        <div class="question">
+          <h2>How often should I wash my hair?</h2>
+        </div>
+      </div>
+      <div class="answer-selection-container">
+        <form class="answer-section">
+          <label class="answer-option">
+            <input type="radio" name= "answer" required>1-2 times per week
+          </label>
+          <label class="answer-option">
+            <input type="radio" name= "answer" required>3-4 times per week
+          </label>
+          <label class="answer-option">
+            <input type="radio" name= "answer" required>5-6 times per week
+          </label>
+        </form>
+      </div>
+       <div class="button-container">
+         <button onclick="processResponse()">Submit</button>
+      </div>
+    </div>
+<!--third "page" -->
+  <div class="visibility col-12-grid" id="page-3">
+    <div class="score_container">
+      <span class="question_number">Question 5/10</span>
+      <span class="correct_score">Correct: 3</span>
+    </div>
+    <div class="response_image_container">
+      <img src="images/correct_answer.jpg" class="response_images"/>
+    </div>
+    <div class="response_answer">
+      <h2>Correct, go ahead twirl that hair!</h2>
+    </div>
+    <div class="button-container">
+      <button>Next</button>
+    </div>
+  </div>
+<!--fourth "page" -->
+  <div class="col-12-grid" id="page-4">
+    <div class="results-container">
+      <div class="final-score">You got 8/10 Correct</div>
+      <div class="final_message">You're a hair rockstar</div>
+    </div>
+    <div class="button-container">
+      <button>Retake Quiz</button>
+    </div>
+  </div>
 
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

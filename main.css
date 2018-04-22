@@ -1,15 +1,28 @@
 @import "grid.css";
 
-/* need to find a way to reference different images*/
-body {
+* {
+  box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
-  /* background-image: url("https://www.transparenttextures.com/patterns/climpek.png"); */
-  /*background-color: #6b5c5c;*/
-}
+ }
 
 /* .background-image {
   opacity: 0.4;
 } */
+
+/*toggle to show and hide all the "pages"*/
+.visibility#page-1 {
+  display: none;
+}
+.visibility#page-2 {
+  display: none;
+}
+.visibility#page-3 {
+  display: none;
+}
+/* .visibility#page-4 {
+  display: none;
+} */
+
 header {
   background-color: #6B5C5C;
   background-image: url("https://www.transparenttextures.com/patterns/climpek.png");
