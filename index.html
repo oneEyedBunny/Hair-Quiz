@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+  <title>Hair Quiz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <main role="main">
+    <header>Hair Quiz</header>
+    <div class="col-12-grid" id="page-1">
+      <div class="intro-statement">
+        <h2>How well do you know your hair?</h2>
+      </div>
+      <div class="intro-statement">
+        <span>select two</span>
+      </div>
+      <div class="selection-container">
+        <div class="hair-length-container">
+          <div class="card-short" class="option-1">
+              <img src="images/short_hair.jpg" class="selection_images" alt="short hair"/>
+              <div class="content" onclick="changeColor()">
+                <h3>Short</h3>
+              </div>
+          </div>
+
+          <div class="card-long" class="option-1">
+              <img src="images/long_hair.jpg" class="selection_images" alt="long hair"/>
+              <div class="content">
+                <h3>Long</h3>
+              </div>
+          </div>
+        </div>
+
+        <div class="hair-texture-container">
+          <div class="card-straight" class="option-2">
+              <img src="images/straight_hair.jpg" class="selection_images" alt=" straight hair"/>
+              <div class="content">
+                <h3>Straight</h3>
+              </div>
+          </div>
+
+          <div class="card-curly" class="option-2">
+              <img src="images/curly_hair.jpg" class="selection_images" alt="curly hair"/>
+              <div class="content">
+                <h3>Curly</h3>
+              </div>
+          </div>
+        </div>
+      </div>
+       <div class="button-container">
+         <button onclick="startQuiz()">Quiz Me</button>
+      </div>
+
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="index.js"></scipt>
+</body>
