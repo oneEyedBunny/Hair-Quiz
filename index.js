@@ -33,17 +33,19 @@ $(function() {
   $(".quiz-me").click(function() {
     console.log("I'm awesome");
     //createQuestionArray();
-    //enactPageChange(1);
+    enactPageChange(1,2);
     //displayQuestion();
     //displayQuizStatus();
   })
 });
-//
-// //function that hides the current page and shows the next page
-// function enactPageChange(pageNumber) {
-//   $("#page-").addClass("hidden")
-//   $("#page-"+pageNumber).removeClass("hidden");
-// }
+
+//function that hides the current page and shows the next page
+function enactPageChange(pageNumber, nextPageNumber) {
+  console.log("my page number is " + pageNumber);
+  console.log("my page number is " + nextPageNumber);
+  $("#page-"+pageNumber).addClass("hidden");
+  $("#page-"+nextPageNumber).removeClass("hidden");
+}
 //
 // //////////////page 2 functions/////////////////////////////////////////////////////////////////////////////////
 // //creates an array of questions based on the users selections for hair length/texture
@@ -54,7 +56,7 @@ $(function() {
 //
 // if(this.state.length ==="long"){
 //     lengthQuestions = shortQuestions;
-// }else if (this.state.length ==="shor"){
+// }else if (this.state.length ==="short"){
 //     lengthQuestions = longQuestions
 // }
 // //
