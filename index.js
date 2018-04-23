@@ -1,49 +1,51 @@
-$(".hair-content length").click(function(event){
-  console.log("hi");
-  $(event.currentTarget).addClass(".highlighted");
-})
+$(function() {
+  var state = {
+    currentQuestion: 0,
+    score: 0,
+    length: "",
+    texture: "",
+    questions: []
+  };
 
 
+  $(".hair-content-length").click(function(e) {
+    $(".hair-content-length").removeClass("highlighted");
+    $(event.currentTarget).addClass("highlighted");
+    state.length = $(event.currentTarget).attr("data-length");
+    showButton()
+  });
 
-//toggles the class of the selections that the user makes
-function userHairSelection() {
-  Adds the class of the selection to "hairSelection";
-  removes the class of "hairSelection" from the sibling in the same container;
-   changeColor();
-   showQuizMeButton();
-}
+  $(".hair-content-texture").click(function(e) {
+    // $(".hair-content-length").removeClass("highlighted");
+    // $(event.currentTarget).addClass("highlighted");
+    // state.length = $(event.currentTarget).attr("data-length");
+    showButton()
+  });
 
-//Changes the color of the selection div and ensures the other selection option is not colored
-function changeColor() {
-  $('.content').on('click' function(){
-    $(this).addClass('highlighted');
+
+  function showButton(){
+    if(state.length && state.textrure){
+      // show the Button!!
+    }
+  }
+
+  $(Quizme).click(function(){
+
   })
-}
 
-// function changeColor () {
-//   document.getElementById('.content').addEventListner("click", function(event){
-//     event.addClass('highlighted');
-//   })
-// })
+});
 
-//makes the quiz me button visible so the user can start the quiz
-function showQuizMeButton() {
-  checks to see if 2 classes have been denoted "hairSelection", 1 from each container (hair-length-container + hair-texture-container)
-  if yes, show the button,
-   else hide the button
-
-}
 
 //function that hides the current "page" and shows the new page
-function enactPageChange1() {
- changes the page-1 class of .visbility to display:none
- changes the page-2 class of .visbility to display:block
+function enactPageChange(pageNumber) {
+  // select all pages, add class hidden
+  // $("#page-"+pageNumber) remove class hidden
 }
 
 //function to call
 function clickQuizMeButton() {
   createQuestionArray();
-  enactPageChange1();
+  enactPageChange(1);
   displayQuestion();
   displayQuizStatus();
 }
@@ -51,10 +53,28 @@ function clickQuizMeButton() {
 //////////////page 2 functions/////////////////////////////////////////////////////////////////////////////////
 //creates an array of questions based on the users selections for hair length/texture
 function createQuestionArray() {
-  pushes questions from the universal array to the quizQuestions array
-  pushes the two arrays that correspond to their selections to the quizQuestions array
-  ****need to figure out how to get from a class of "hairSelection" to the corresponding array of questions***
+
+let lengthQuestions;
+let textureQuestions;
+
+if(this.state.length ==="long"){
+    lengthQuestions = shortQuestions;
+}else if (this.state.length ==="shor"){
+    lengthQuestions = longQuestions
 }
+//
+// if(this.state.tex ==="long"){
+//     textureQuestions = shortQuestions;
+// }else if (this.state.length ==="shor"){
+//     textureQuestions = longQuestions
+// }
+
+state.questions = [...universalQuestions, ...lengthQuestions, ...textureQuestions]
+  // pushes questions from the universal array to the quizQuestions array
+  // pushes the two arrays that correspond to their selections to the quizQuestions array
+}
+
+
 
 //function that renders the question onto the page
 function displayQuestion() {

@@ -11,7 +11,7 @@
 <body>
   <main role="main">
     <header>Hair Quiz</header>
-    <div class="visibility col-12-grid" id="page-1">
+    <div class="page visibility col-12-grid" id="page-1">
       <div class="intro-statement">
         <h2>How well do you know your hair?</h2>
       </div>
@@ -22,14 +22,14 @@
         <div class="hair-length-container">
           <div id="card-short" class="option-1">
               <img src="images/short_hair.jpg" class="selection_images" alt="short hair"/>
-              <div class="hair-content length">
+              <div class="hair-content hair-content-length" data-length="short">
                 <h3>Short</h3>
               </div>
           </div>
 
           <div id="card-long" class="option-1">
               <img src="images/long_hair.jpg" class="selection_images" alt="long hair"/>
-              <div class="hair-content length">
+              <div class="hair-content hair-content-length" data-length="long" >
                 <h3>Long</h3>
               </div>
           </div>
@@ -38,14 +38,14 @@
         <div class="hair-texture-container">
           <div id="card-straight" class="option-2">
               <img src="images/straight_hair.jpg" class="selection_images" alt=" straight hair"/>
-              <div class="hair-content">
+              <div class="hair-content hair-content-texture">
                 <h3>Straight</h3>
               </div>
           </div>
 
           <div id="card-curly" class="option-2">
               <img src="images/curly_hair.jpg" class="selection_images" alt="curly hair"/>
-              <div class="hair-content">
+              <div class="hair-content hair-content-texture" >
                 <h3>Curly</h3>
               </div>
           </div>
@@ -57,7 +57,7 @@
     </div>
 
 <!--second "page" -->
-    <div class="visibility col-12-grid" id="page-2">
+    <div class="page col-12-grid" id="page-2">
       <div class="score_container">
         <span class="question_number">Question 5/10</span>
         <span class="correct_score">Correct: 3</span>
@@ -82,11 +82,11 @@
         </form>
       </div>
        <div class="button-container">
-         <button onclick="processResponse()">Submit</button>
+         <button>Submit</button>
       </div>
     </div>
 <!--third "page" -->
-  <div class="visibility col-12-grid" id="page-3">
+  <div class="page col-12-grid" id="page-3">
     <div class="score_container">
       <span class="question_number">Question 5/10</span>
       <span class="correct_score">Correct: 3</span>
@@ -102,7 +102,7 @@
     </div>
   </div>
 <!--fourth "page" -->
-  <div class="visibility col-12-grid" id="page-4">
+  <div class="page col-12-grid" id="page-4">
     <div class="results-container">
       <div class="final-score">You got 8/10 Correct</div>
       <div class="final_message">You're a hair rockstar</div>
@@ -114,5 +114,5 @@
 
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="index.js"></scipt>
+  <script src="index.js"></script>
 </body>

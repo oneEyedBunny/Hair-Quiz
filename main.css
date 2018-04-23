@@ -2,29 +2,19 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
- }
+  font-family: "Raleway", sans-serif;
+}
 
 /* .background-image {
   opacity: 0.4;
 } */
 
-/*toggle to show and hide all the "pages"*/
-/* .visibility#page-1 {
+.hidden {
   display: none;
 }
-.visibility#page-2 {
-  display: none;
-}
-.visibility#page-3 {
-  display: none;
-}
-.visibility#page-4 {
-  display: none;
-} */
 
 header {
-  background-color: #6B5C5C;
+  background-color: #6b5c5c;
   background-image: url("https://www.transparenttextures.com/patterns/climpek.png");
   padding: 20px;
   font-size: 20px;
@@ -61,19 +51,23 @@ h3 {
   border-radius: 3px;
 }
 
-.hair-length-container, .hair-texture-container {
+.hair-length-container,
+.hair-texture-container {
   margin-bottom: 30px;
 }
 
-#card-short, #card-long, #card-straight, #card-curly {
+#card-short,
+#card-long,
+#card-straight,
+#card-curly {
   display: inline-block;
 }
 
 .hair-content {
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   padding: 1px;
   border-radius: 3px;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .hair-content:hover {
@@ -82,7 +76,7 @@ h3 {
 }
 
 .highlighted {
-  background-color: #FF7F50;
+  background-color: #ff7f50;
 }
 
 /*Question Page...............................................*/
@@ -104,32 +98,29 @@ h3 {
   height: auto;
 }
 
- .answer-option {
-   border: 1px solid black;
-   padding: 15px;
-   margin: 30px auto;
-   width: 50%;
-   border-radius: 3px;
-   display: block;
-   transition: .4s ease-in-out;
-   background-color: #C4C4C4;
- }
+.answer-option {
+  border: 1px solid black;
+  padding: 15px;
+  margin: 30px auto;
+  width: 50%;
+  border-radius: 3px;
+  display: block;
+  transition: 0.4s ease-in-out;
+  background-color: #c4c4c4;
+}
 
- .answer-option:hover {
-   background-color: #FF7F50;
- }
+.answer-option:hover {
+  background-color: #ff7f50;
+}
 
- input[type=radio] {
-   flex: 0 0 auto;
-   margin-right: 10px; /* spaces the text*/
- }
-
- input[type=radio]:checked + label::after {
-   background-color: #FF7F50;
- }
+input[type="radio"] {
+  flex: 0 0 auto;
+  margin-right: 10px; /* spaces the text*/
+}
 
 /*Response Page...............................................*/
-.response_image_container, .score_container {
+.response_image_container,
+.score_container {
   text-align: center;
   width: 50%;
   margin: auto;
@@ -154,21 +145,23 @@ h3 {
 
 /*Final Output Page...............................................*/
 .results-container {
-  background-color: #FF7F50;
+  background-color: #ff7f50;
   border-radius: 2px;
   margin: auto;
   width: 50%;
   text-align: center;
 }
 
-.final-score, .final_message {
- padding: 25px;
- margin: 15px;
- font-size: 25px;
+.final-score,
+.final_message {
+  padding: 25px;
+  margin: 15px;
+  font-size: 25px;
 }
 
 /*universal stylings...............................................*/
-.question_number, .correct_score {
+.question_number,
+.correct_score {
   display: inline-block;
   padding: 15px;
   /* margin: auto; */
@@ -180,7 +173,7 @@ h3 {
 }
 
 button {
-  background-color: #048A81;
+  background-color: #048a81;
   color: white;
   font-size: 20px;
   padding: 8px;
