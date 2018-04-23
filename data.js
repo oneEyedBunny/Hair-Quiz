@@ -1,4 +1,8 @@
-const universal_questions = [
+const quizQuestions=[
+  {},{}
+];
+
+const universalQuestions = [
   {
     question: 'Where should I apply conditioner in my hair?',
     answers: ['Roots','Ends','Roots & Ends'],
@@ -30,7 +34,7 @@ const universal_questions = [
   }
 ];
 
-const short_questions = [
+const shortQuestions = [
   {
     question: 'How often should I get my haircut?',
     answers: ['Every 3-4 weeks','Every 4-6 weeks','Every 7-10 weeks'],
@@ -55,7 +59,7 @@ const short_questions = [
   }
 ];
 
-const long_questions = [
+const longQuestions = [
   {
     question: 'How often should I get my haircut?',
     answers: ['Every 7-10 weeks','Every 10-14 weeks', "Twice a year"],
@@ -80,7 +84,7 @@ const long_questions = [
   }
 ];
 
-const straight_questions = [
+const straightQuestions = [
   {
     question: 'How often should I wash my hair?',
     answers: ['Every day','Every other day', 'Twice a week'],
@@ -105,7 +109,7 @@ const straight_questions = [
   }
 ];
 
-const curly_questions = [
+const curlyQuestions = [
   {
     question: 'How often should I wash my hair?',
     answers: ['Every day','Every other day', 'Twice a week'],
