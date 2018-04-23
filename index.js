@@ -1,10 +1,11 @@
+//global object
 $(function() {
   var state = {
     currentQuestion: 0,
     score: 0,
     length: "",
     texture: "",
-    questions: []
+    finalQuizQuestions: []
   };
 
   //changes the color of the selection to orange and ensures that the alternate option is not orange
@@ -29,44 +30,45 @@ $(function() {
     }
   }
 
-//function to call
+//function to call when quiz me button is clicked
   $(".quiz-me").click(function() {
-    console.log("I'm awesome");
-    //createQuestionArray();
     enactPageChange(1,2);
+    createQuestionArray();
     //displayQuestion();
     //displayQuizStatus();
   })
-});
+
 
 //function that hides the current page and shows the next page
-function enactPageChange(pageNumber, nextPageNumber) {
-  console.log("my page number is " + pageNumber);
-  console.log("my page number is " + nextPageNumber);
-  $("#page-"+pageNumber).addClass("hidden");
+function enactPageChange(currentPageNumber, nextPageNumber) {
+  $("#page-"+currentPageNumber).addClass("hidden");
   $("#page-"+nextPageNumber).removeClass("hidden");
 }
-//
-// //////////////page 2 functions/////////////////////////////////////////////////////////////////////////////////
-// //creates an array of questions based on the users selections for hair length/texture
-// function createQuestionArray() {
-//
-// let lengthQuestions;
-// let textureQuestions;
-//
-// if(this.state.length ==="long"){
-//     lengthQuestions = shortQuestions;
-// }else if (this.state.length ==="short"){
-//     lengthQuestions = longQuestions
-// }
-// //
-// // if(this.state.tex ==="long"){
-// //     textureQuestions = shortQuestions;
-// // }else if (this.state.length ==="shor"){
-// //     textureQuestions = longQuestions
-// // }
-//
-// state.questions = [...universalQuestions, ...lengthQuestions, ...textureQuestions]
+
+//////////////page 2 functions/////////////////////////////////////////////////////////////////////////////////
+//creates an array of questions based on the users selections for hair length/texture
+function createQuestionArray() {
+  console.log(state.length);
+  console.log(state.texture);
+  let lengthQuestions;
+  let textureQuestions;
+
+  if(state.length ==="long") {
+      lengthQuestions = longQuestions;
+   } else if (state.length ==="short") {
+      lengthQuestions = shortQuestions;
+  }
+  if(state.texture ==="straight"){
+      textureQuestions = straightQuestions;
+  } else if (state.texture ==="curly"){
+      textureQuestions = curlyQuestions;
+  }
+  console.log("funky fish");
+  console.log(lengthQuestions);
+  console.log(textureQuestions);
+}
+
+// state.finalQuizQuestions = [...universalQuestions, ...lengthQuestions, ...textureQuestions]
 //   // pushes questions from the universal array to the quizQuestions array
 //   // pushes the two arrays that correspond to their selections to the quizQuestions array
 // }
@@ -147,7 +149,7 @@ function enactPageChange(pageNumber, nextPageNumber) {
 //
 // //function to call
 // function clickNextButton() {
-//   enactPageChange2();
+//   enactPageChange(3,2);
 //   displayQuestion();
 //   displayQuizStatus();
 // }
@@ -169,3 +171,5 @@ function enactPageChange(pageNumber, nextPageNumber) {
 //   changes the page-4 class of .visbility to display:none
 //   changes the page-1 class of .visbility to display:block
 // }
+
+}); //closes the global object function
