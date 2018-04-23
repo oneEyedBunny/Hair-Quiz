@@ -1,8 +1,8 @@
 //global object and document.ready function for all
 $(function() {
   var state = {
-    currentQuestion: 0,
-    score: 0,
+    currentQuestionNumber: 0,
+    correctScore: 0,
     length: "",
     texture: "",
     finalQuizQuestions: []
@@ -14,6 +14,9 @@ $(function() {
     $(event.currentTarget).addClass("highlighted");
     state.length = $(event.currentTarget).attr("data-length");
     showQuizMeButton();
+    $(".quiz-me").scrollIntoView({
+      behavior: "smooth"
+    });
   });
 
   $(".hair-content-texture").click(function(event) {
@@ -21,6 +24,9 @@ $(function() {
     $(event.currentTarget).addClass("highlighted");
     state.texture = $(event.currentTarget).attr("data-texture");
     showQuizMeButton();
+    $(".quiz-me").scrollIntoView({
+      behavior: "smooth"
+    });
   });
 
 //shows a button to to start the quiz once two selections have been made
@@ -30,12 +36,12 @@ $(function() {
     }
   }
 
-//function to call when quiz me button is clicked
+//calls several functions when quiz me button is clicked
   $(".quiz-me").click(function() {
     enactPageChange(1,2);
     createQuestionArray();
-    //displayQuestion();
-    //displayQuizStatus();
+    displayQuizStatus();
+    //displayQuestionOnPage();
   })
 
 
@@ -61,28 +67,24 @@ function createQuestionArray() {
   } else if (state.texture ==="curly"){
       textureQuestions = curlyQuestions;
   }
-  console.log(lengthQuestions);
-  console.log(textureQuestions);
   state.finalQuizQuestions = [...universalQuestions, ...lengthQuestions, ...textureQuestions];
   console.log(state.finalQuizQuestions);
 }
 
-//
-// //function that renders the question onto the page
-// function displayQuestion() {
+//displays the question number and the # of correct answers
+function displayQuizStatus() {
+  $(".question-number").text(`Question ${state.currentQuestionNumber}/10`);
+  $(".correct-score").text(`Correct: ${state.correctScore}`);
+}
+
+//function that renders the question onto the page
+// function displayQuestionOnPage() {
 //   loops through quizQuestions array to the first object
 //   displays image value from image property in questionContainer
 //   display question value from question proprty in text in question div
 //   displays all the objects answers from answer array in the answer-option labels
-//   displays the submit button
 // }
-//
-// // currently need to declare to global variables to get this to work
-// function displayQuizStatus() {
-//   display `${questionNumber}/10` in .score-score_container
-//   display correctAnswerTotal in .score_container
-// }
-//
+
 // //function to call
 // function clickSubmitAnswerButton() {
 //   checkAnswer();

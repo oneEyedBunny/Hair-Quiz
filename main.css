@@ -22,7 +22,6 @@ header {
   margin-bottom: 35px;
 }
 
-/* find another selector so these settings can apply across all the pages when JS is in play*/
 .intro-statement > h2 {
   text-align: center;
   /* margin: 0 auto; */
@@ -118,26 +117,26 @@ input[type="radio"] {
 }
 
 /*Response Page...............................................*/
-.response_image_container,
-.score_container {
+.response-image-container,
+.score-container {
   text-align: center;
   width: 50%;
   margin: auto;
   font-size: 20px;
 }
 
-.response_images {
+.response-images {
   width: 100%;
   height: auto;
   border-radius: 3px;
 }
 
-.response_answer {
+.response-answer {
   margin: auto;
   width: 50%;
 }
 
-.response_answer > h2 {
+.response-answer > h2 {
   text-align: center;
   margin: 35px 35px 50px 35px;
 }
@@ -152,15 +151,15 @@ input[type="radio"] {
 }
 
 .final-score,
-.final_message {
+.final-message {
   padding: 25px;
   margin: 15px;
   font-size: 25px;
 }
 
 /*universal stylings...............................................*/
-.question_number,
-.correct_score {
+.question-number,
+.correct-score {
   display: inline-block;
   padding: 15px;
   /* margin: auto; */
