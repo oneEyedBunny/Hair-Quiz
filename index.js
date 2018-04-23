@@ -1,3 +1,9 @@
+$(".hair-content length").click(function(event){
+  console.log("hi");
+  $(event.currentTarget).addClass(".highlighted");
+})
+
+
 
 //toggles the class of the selections that the user makes
 function userHairSelection() {
@@ -7,7 +13,7 @@ function userHairSelection() {
    showQuizMeButton();
 }
 
-//function that changes the color of the selection div and ensures the other selection option is not colored
+//Changes the color of the selection div and ensures the other selection option is not colored
 function changeColor() {
   $('.content').on('click' function(){
     $(this).addClass('highlighted');
@@ -23,7 +29,8 @@ function changeColor() {
 //makes the quiz me button visible so the user can start the quiz
 function showQuizMeButton() {
   checks to see if 2 classes have been denoted "hairSelection", 1 from each container (hair-length-container + hair-texture-container)
-  if yes, show the button, if no hide the button
+  if yes, show the button,
+   else hide the button
 
 }
 

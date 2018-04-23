@@ -69,20 +69,21 @@ h3 {
   display: inline-block;
 }
 
-.content {
+.hair-content {
   background-color: #C4C4C4;
   padding: 1px;
   border-radius: 3px;
   transition: .2s ease-in-out;
 }
 
-.content:hover {
-  opacity: .5;
+.hair-content:hover {
+  /* opacity: .5; */
+  background-color: light-gray;
 }
 
-/* .highlighted {
+.highlighted {
   background-color: #FF7F50;
-} */
+}
 
 /*Question Page...............................................*/
 .question-container {
