@@ -1,4 +1,4 @@
-//global object
+//global object and document.ready function for all
 $(function() {
   var state = {
     currentQuestion: 0,
@@ -46,10 +46,8 @@ function enactPageChange(currentPageNumber, nextPageNumber) {
 }
 
 //////////////page 2 functions/////////////////////////////////////////////////////////////////////////////////
-//creates an array of questions based on the users selections for hair length/texture
+//creates an array of questions based on the users selections for hair length/texture + standard universal questions
 function createQuestionArray() {
-  console.log(state.length);
-  console.log(state.texture);
   let lengthQuestions;
   let textureQuestions;
 
@@ -63,17 +61,12 @@ function createQuestionArray() {
   } else if (state.texture ==="curly"){
       textureQuestions = curlyQuestions;
   }
-  console.log("funky fish");
   console.log(lengthQuestions);
   console.log(textureQuestions);
+  state.finalQuizQuestions = [...universalQuestions, ...lengthQuestions, ...textureQuestions];
+  console.log(state.finalQuizQuestions);
 }
 
-// state.finalQuizQuestions = [...universalQuestions, ...lengthQuestions, ...textureQuestions]
-//   // pushes questions from the universal array to the quizQuestions array
-//   // pushes the two arrays that correspond to their selections to the quizQuestions array
-// }
-//
-//
 //
 // //function that renders the question onto the page
 // function displayQuestion() {
