@@ -38,26 +38,26 @@
         <div class="hair-texture-container">
           <div id="card-straight" class="option-2">
               <img src="images/straight_hair.jpg" class="selection_images" alt=" straight hair"/>
-              <div class="hair-content hair-content-texture">
+              <div class="hair-content hair-content-texture" data-texture="straight">
                 <h3>Straight</h3>
               </div>
           </div>
 
           <div id="card-curly" class="option-2">
               <img src="images/curly_hair.jpg" class="selection_images" alt="curly hair"/>
-              <div class="hair-content hair-content-texture" >
+              <div class="hair-content hair-content-texture" data-texture="curly" >
                 <h3>Curly</h3>
               </div>
           </div>
         </div>
       </div>
        <div class="button-container">
-         <button onclick="startQuiz()">Quiz Me</button>
+         <button class="hidden quiz-me">Quiz Me</button>
       </div>
     </div>
 
 <!--second "page" -->
-    <div class="page col-12-grid" id="page-2">
+    <div class="page visibility page col-12-grid" id="page-2">
       <div class="score_container">
         <span class="question_number">Question 5/10</span>
         <span class="correct_score">Correct: 3</span>
@@ -86,7 +86,7 @@
       </div>
     </div>
 <!--third "page" -->
-  <div class="page col-12-grid" id="page-3">
+  <div class="page visibility page col-12-grid" id="page-3">
     <div class="score_container">
       <span class="question_number">Question 5/10</span>
       <span class="correct_score">Correct: 3</span>
@@ -102,7 +102,7 @@
     </div>
   </div>
 <!--fourth "page" -->
-  <div class="page col-12-grid" id="page-4">
+  <div class="page visibility page col-12-grid" id="page-4">
     <div class="results-container">
       <div class="final-score">You got 8/10 Correct</div>
       <div class="final_message">You're a hair rockstar</div>

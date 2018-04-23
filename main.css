@@ -71,8 +71,7 @@ h3 {
 }
 
 .hair-content:hover {
-  /* opacity: .5; */
-  background-color: light-gray;
+  background-color: #ff7f50;
 }
 
 .highlighted {
