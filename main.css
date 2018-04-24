@@ -73,10 +73,6 @@ h3 {
   background-color: #ff7f50;
 }
 
-.highlighted {
-  background-color: #ff7f50;
-}
-
 /*Question Page...............................................*/
 .question-container {
   text-align: center;
@@ -158,6 +154,9 @@ input[type="radio"] {
 }
 
 /*universal stylings...............................................*/
+.highlighted {
+  background-color: #ff7f50;
+}
 .question-number,
 .correct-score {
   display: inline-block;

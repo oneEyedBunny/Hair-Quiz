@@ -77,20 +77,23 @@ function displayQuizStatus() {
   $(".correct-score").text(`Correct: ${state.correctScore}`);
 }
 
-//function that renders the question onto the page
+//function that renders the question, image, and potential answers onto the page
 function displayQuestionOnPage() {
   if (state.currentQuestionNumber < state.finalQuizQuestions.length) {
     let currentObject = state.finalQuizQuestions[state.currentQuestionNumber];
-    // let currentQuestion = currentObject.question;
     $(".question-text").text(currentObject.question);
     $(".question-image").attr("src", currentObject.image);
-    console.log("step1");
       for(let i = 0; i < currentObject.answers.length ; i ++) {
           $(".answer-option-"+i).after(currentObject.answers[i]).attr("value", currentObject.answers[i]);
-          console.log("step2");
       }
    }
  }
+
+ //changes the color of the selection to orange
+   $(".answer").click(function(event) {
+     $(".answer").parent().removeClass("highlighted");
+     $(event.target).parent().addClass("highlighted");
+   })
 
 //function to call
 function clickSubmitAnswerButton(event) {
@@ -106,6 +109,8 @@ function clickSubmitAnswerButton(event) {
 //
 // //function to see if they got the answer right or wrong
 // function checkAnswer() {
+// let userAnswer = $(event.currentTarget).attr("value");
+// console.log(userAnswer);
 //   identifies their answer selection
 //   checks it against the objects correct_answer value
 //   returns true or false value
