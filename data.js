@@ -6,6 +6,7 @@ const universalQuestions = [
     correct_answer: 'Roots & Ends',
     incorrect_response: 'You should always apply conditioner all over to nourish your scalp and ends',
     image: "images/shampoo.jpg",
+    alt: "shampooing hair",
   } ,
   {
     question: 'If I have a cowlick in my bangs, what should I do?',
@@ -13,6 +14,7 @@ const universalQuestions = [
     correct_answer: 'Blowdry my bangs both directions',
     incorrect_response:'',
     image: "images/brushing.jpg",
+    alt: "brushing hair",
   } ,
   {
     question: 'What product is best for messy/tossled styles?',
@@ -20,6 +22,7 @@ const universalQuestions = [
     correct_answer: 'Sea salt spray in dry hair',
     incorrect_response: 'You should spray some sea salt in your hair',
     image: "images/product_1.jpg",
+    alt: "hair products",
   } ,
   {
     question: 'If I see white flakes in my hair, what is it?',
@@ -27,6 +30,7 @@ const universalQuestions = [
     correct_answer: 'Dry scalp',
     incorrect_response:'Dandruff is a waxy sheet, this is just dry scalp. Go get some moisturizing conditioner and massage it into your scalp',
     image: "images/product_2.jpg",
+    alt: "hair products",
   }
 ];
 
@@ -37,6 +41,7 @@ const shortQuestions = [
     correct_answer: 'Every 4-6 weeks',
     incorrect_response:'In order to maintain the look of your short cut, you need to trim it ever 4-6 weeks',
     image: "images/hair_cut.jpg",
+    alt: "hair cut",
   } ,
   {
     question: 'What type of brush should I use to smooth my hair?',
@@ -44,6 +49,7 @@ const shortQuestions = [
     correct_answer: '',
     incorrect_response:'',
     image: "images/product_1.jpg",
+    alt: "hair products",
   } ,
   {
     question: 'What product is best to give good hold?',
@@ -51,6 +57,7 @@ const shortQuestions = [
     correct_answer: 'Palmade on dry hair',
     incorrect_response:"Skip the gel and hairspray, it's soooo 90's. Palamdes come in strong hold",
     image: "images/product_1.jpg",
+    alt: "hair products",
   }
 ];
 
@@ -61,6 +68,8 @@ const longQuestions = [
     correct_answer: 'Every 10-14 weeks',
     incorrect_response:'Long hair still needs regular trims to get ride of breakage from split ends, come in every 10-14 weeks',
     image: "images/hair_cut.jpg",
+    alt: "hair cut",
+
   } ,
   {
     question: 'What product is best for tameing staticy flyaways and frizz?',
@@ -68,6 +77,7 @@ const longQuestions = [
     correct_answer: 'anti-humidity cream on wet hair',
     incorrect_response:'Anti-humidity hair creams applied to wet hair and blowdried in will provide the longest coverage',
     image: "images/product_2.jpg",
+    alt: "hair products",
   } ,
   {
     question: "Is it ok to brush my hair when it's wet?",
@@ -75,6 +85,7 @@ const longQuestions = [
     correct_answer: "Yes if it's a wide tooth comb",
     incorrect_response:"Yes, but make sure you're using a wide tooth. Fine tooth combs and brushes with lots of brissles can tear your hair",
     image: "images/brushing.jpg",
+    alt: "brushing hair",
   }
 ];
 
@@ -85,6 +96,7 @@ const straightQuestions = [
     correct_answer: 'Every other day',
     incorrect_response:'Your hair will overproduce oil if you overwash it, so stick to every other day',
     image: "images/shampoo.jpg",
+    alt: "shampooing hair",
   } ,
   {
     question: 'If my hair is lacking volume, what product is best to use?',
@@ -92,6 +104,7 @@ const straightQuestions = [
     correct_answer: 'Texture dust on dry hair',
     incorrect_response:'Texture dust is a great way to give volume that can be reactivated throughout the day',
     image: "images/product_2.jpg",
+    alt: "hair products",
   } ,
   {
     question: 'What type of shampoo/conditioner are best for my hair?',
@@ -99,6 +112,7 @@ const straightQuestions = [
     correct_answer: 'Lightweight moisturizing',
     incorrect_response:'Lighweight moisturizing will avoid weighing your hair down',
     image: "images/product_1.jpg",
+    alt: "hair products",
   }
 ];
 
@@ -109,6 +123,7 @@ const curlyQuestions = [
     correct_answer: 'Twice a week',
     incorrect_response:'Curly hair is prone to dryness, so only wash it twice a week',
     image: "images/shampoo.jpg",
+    alt: "shampooing hair",
   } ,
   {
     question: 'What type of shampoo/conditioner are best for my hair?',
@@ -116,6 +131,7 @@ const curlyQuestions = [
     correct_answer: 'Heavy moisturizing',
     incorrect_response:'Curly hair has an open cuticle and is prone to dryness, combat with a heavy moisturizing product',
     image: "images/product_1.jpg",
+    alt: "hair products",
   } ,
   {
     question: 'What should I do to get rid of my pizza wedge shaped hair?',
@@ -123,5 +139,6 @@ const curlyQuestions = [
     correct_answer: 'Get a haircut with both internal and external layers',
     incorrect_response:"Layers layers layers, it's the only way to avoid that bulky wedge",
     image: "images/hair_cut.jpg",
+    alt: "hair cut",
   }
 ];

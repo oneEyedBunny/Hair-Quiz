@@ -1,8 +1,8 @@
 //global object and document.ready function for all
 $(function() {
   var state = {
-    currentQuestionNumber: 0,
-    correctScore: 0,
+    currentQuestionNumber: 2,
+    correctScore: 2,
     length: "",
     texture: "",
     finalQuizQuestions: []
@@ -41,7 +41,7 @@ $(function() {
     enactPageChange(1,2);
     createQuestionArray();
     displayQuizStatus();
-    //displayQuestionOnPage();
+    displayQuestionOnPage();
   })
 
 
@@ -78,21 +78,30 @@ function displayQuizStatus() {
 }
 
 //function that renders the question onto the page
-// function displayQuestionOnPage() {
-//   loops through quizQuestions array to the first object
-//   displays image value from image property in questionContainer
-//   display question value from question proprty in text in question div
-//   displays all the objects answers from answer array in the answer-option labels
-// }
+function displayQuestionOnPage() {
+  if (state.currentQuestionNumber < state.finalQuizQuestions.length) {
+    let currentObject = state.finalQuizQuestions[state.currentQuestionNumber];
+    // let currentQuestion = currentObject.question;
+    $(".question-text").text(currentObject.question);
+    $(".question-image").attr("src", currentObject.image);
+    console.log("step1");
+      for(let i = 0; i < currentObject.answers.length ; i ++) {
+          $(".answer-option-"+i).after(currentObject.answers[i]).attr("value", currentObject.answers[i]);
+          console.log("step2");
+      }
+   }
+ }
 
-// //function to call
-// function clickSubmitAnswerButton() {
+//function to call
+function clickSubmitAnswerButton(event) {
+  console.log("nothing to see here right now");
+//   event.preventDefault();
 //   checkAnswer();
 //   displayAnswerResults();
 //   calculateCorrectAnswers();
 //   displayQuizStatus();
-// }
-//
+}
+
 // //////////////page 3 functions/////////////////////////////////////////////////////////////////////////////////
 //
 // //function to see if they got the answer right or wrong
