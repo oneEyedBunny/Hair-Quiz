@@ -5,7 +5,7 @@ const universalQuestions = [
     answers: ['Roots','Ends','Roots & Ends'],
     correct_answer: 'Roots & Ends',
     incorrect_response: 'You should always apply conditioner all over to nourish your scalp and ends',
-    image: "images/shampoo.jpg",
+    image: "images/shampoo.jpeg",
     alt: "shampooing hair",
   } ,
   {
@@ -95,7 +95,7 @@ const straightQuestions = [
     answers: ['Every day','Every other day', 'Twice a week'],
     correct_answer: 'Every other day',
     incorrect_response:'Your hair will overproduce oil if you overwash it, so stick to every other day',
-    image: "images/shampoo.jpg",
+    image: "images/shampoo.jpeg",
     alt: "shampooing hair",
   } ,
   {
@@ -122,7 +122,7 @@ const curlyQuestions = [
     answers: ['Every day','Every other day', 'Twice a week'],
     correct_answer: 'Twice a week',
     incorrect_response:'Curly hair is prone to dryness, so only wash it twice a week',
-    image: "images/shampoo.jpg",
+    image: "images/shampoo.jpeg",
     alt: "shampooing hair",
   } ,
   {

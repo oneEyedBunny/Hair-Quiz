@@ -1,8 +1,8 @@
 //global object and document.ready function for all
 $(function() {
   var state = {
-    currentQuestionNumber: 2,
-    correctScore: 2,
+    currentQuestionNumber: 0,
+    correctScore: 0,
     length: "",
     texture: "",
     finalQuizQuestions: []
@@ -95,42 +95,51 @@ function displayQuestionOnPage() {
      $(event.target).parent().addClass("highlighted");
    })
 
-//function to call
-function clickSubmitAnswerButton(event) {
-  console.log("nothing to see here right now");
-//   event.preventDefault();
-//   checkAnswer();
-//   displayAnswerResults();
-//   calculateCorrectAnswers();
-//   displayQuizStatus();
-}
+//calls several functions when submit button is clicked
+  $(".submit").click(function() {
+    event.preventDefault();
+    enactPageChange(2,3)
+    checkAnswer();
+    //   calculateCorrectAnswers();
+    displayQuizStatus();
+    //   displayAnswerResults();
+  })
+
 
 // //////////////page 3 functions/////////////////////////////////////////////////////////////////////////////////
-//
-// //function to see if they got the answer right or wrong
-// function checkAnswer() {
-// let userAnswer = $(event.currentTarget).attr("value");
-// console.log(userAnswer);
-//   identifies their answer selection
-//   checks it against the objects correct_answer value
-//   returns true or false value
-// }
-//
-// //determines what image and response should be displayed on page3
+
+//function to see if they got the answer right or wrong
+ function checkAnswer() {
+   let userAnswer = $(event.currentTarget).attr("value");  //identifies their answer selection
+   console.log(userAnswer);
+   if(userAnswer === state.correct_answer) {
+     correctScore++
+    return true;
+    } else {
+    return false
+   };
+  }
+
+//determines what image and response should be displayed on page-3
 // function displayAnswerResults() {
-//   if checkAnswer() is true
-//     then change the current pages class of .visbility to display:none
-//     changes the next pages class of .visbility to display:block
+//   if checkAnswer() === true
 //     displays the image correct_answer in the response_image_container
 //     displays the text "Correct, go ahead twirl that hair!"
-//
-//   if checkAnswer() is false
-//     then changes the current pages class of .visbility to display:none
-//     changes the next pages class of .visbility to display:block
+//    } else {
 //     displays the image incorrect_answer in the response-response_image_container
 //     displays the text associated with the object property incorrect_response
 //   }
-//
+//  }
+//adds to the number of correct answers when they answer correctly
+// // function calculateCorrectAnswers() {
+// //   let correctAnswerTotal = 0;
+// //   if checkAnswer() is null ("aka hasn't run")
+// //     then correctAnswerTotal = 0
+// //    else if checkAnswer() is true
+// //       correctAnswerTotal++
+// //   }
+
+
 // // THIS IS NOT GOING TO WORK, you need to get the initial load of the question number working then increment...no global variables
 // // //displays the question number and correct number
 // // function displayQuizStatus() {
@@ -141,30 +150,23 @@ function clickSubmitAnswerButton(event) {
 // //   }
 // //
 // //
-// // //adds to the number of correct answers when they answer correctly
-// // function calculateCorrectAnswers() {
-// //   let correctAnswerTotal = 0;
-// //   if checkAnswer() is null ("aka hasn't run")
-// //     then correctAnswerTotal = 0
-// //    else if checkAnswer() is true
-// //       correctAnswerTotal++
-// //   }
+
 //
 // //moves from
 // function enactPageChange2() {
 //  changes the page-3 class of .visbility to display:none
 //  changes the page-2 class of .visbility to display:block
 // }
-//
-// //function to call
-// function clickNextButton() {
-//   enactPageChange(3,2);
-//   displayQuestion();
-//   displayQuizStatus();
-// }
-//
+
+//function to call
+function clickNextButton() {
+  enactPageChange(3,2);
+  displayQuestionOnPage();
+  displayQuizStatus();
+}
+
 // //////////////page 4 functions///////////////////////
-//
+
 // function displayQuizFinalResults() {
 //   display `${correctAnswerTotal} /10` in .final-score
 //   if correctAnswerTotal >= 7
@@ -173,12 +175,11 @@ function clickSubmitAnswerButton(event) {
 //       display "You need some help, start talking to your stylist about your hair needs during your appointment"
 //     else display "You're in need of some serious hair 101. Fire your stylist, they should be educating you on some of these things"
 // }
-//
-// function clickRetakeQuizButton() {
-//   sets correctAnswerTotal to zero
-//   sets questionNumber to zero
-//   changes the page-4 class of .visbility to display:none
-//   changes the page-1 class of .visbility to display:block
-// }
 
+//resets score stats and takes user to first page
+  function clickRetakeQuizButton() {
+    state.correctScore =  0;
+    state.currentQuestionNumber = 0;
+    enactPageChange(4,1);
+  }
 }); //closes the global object function
