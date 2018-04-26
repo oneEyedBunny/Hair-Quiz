@@ -1,8 +1,16 @@
+// OPENS:
+// 1) Prior answers to clear when the next questions is asked
+// 2) Highlighted class needs to be removed from prior answer selection- 118
+// 3) Highlighted class needs to be removed from into page when quiz is re-ran- 170
+// 4) Images on page 1 aren't sized
+
+
+
 //global object and document.ready function for all
 $(function(event) {
   var state = {
-    currentQuestionNumber: 0,
-    correctScore: 0,
+    currentQuestionNumber: 8,
+    correctScore: 1,
     length: "",
     texture: "",
     finalQuizQuestions: [],
@@ -75,7 +83,7 @@ function createQuestionArray() {
 
 //displays the question number and the # of correct answers
 function displayQuizStatus() {
-  $(".question-number").text(`Question ${state.currentQuestionNumber}/10`);
+  $(".question-number").text(`Question ${state.currentQuestionNumber+1}/10`);
   $(".correct-score").text(`Correct: ${state.correctScore}`);
 }
 
@@ -95,24 +103,24 @@ function displayQuestionOnPage() {
           state.userAnswer = $(event.target).attr("value");
           state.correct_answer = currentObject.correct_answer;
           state.incorrect_response = currentObject.incorrect_response;
-      })
-    }
+        })
+    } else {
+      displayFinalQuizResults();
+    };
    }
 
 //calls several functions when submit button is clicked
   $(".submit").click(function() {
     enactPageChange(2,3)
     checkAnswer();
-    displayQuizStatus();
     displayAnswerResults();
-    //$(event.target).parent().removeClass"highlighted");//need to get this working so it isn't held over from last click
+    displayQuizStatus();
+    //$(event.target).parent().removeClass"highlighted");//need to get this working so it isn't held over from last click..same as 170
   })
 
-// //////////////page 3 functions/////////////////////////////////////////////////////////////////////////////////
-
+////////////////page 3 functions/////////////////////////////////////////////////////////////////////////////////
 //function to see if they got the answer right or wrong
  function checkAnswer(event) {
-   console.log(state.userAnswer);
    if(state.userAnswer === state.correct_answer) {
      return true;
     } else {
@@ -128,7 +136,7 @@ function displayQuestionOnPage() {
       $(".response-answer > h2").text("Correct, go ahead twirl that hair!");
     } else {
       $(".response-images").attr('src', "images/incorrect_answer.jpg");
-      $(".response-answer > h2").text(state.incorrect_response);
+      $(".response-answer > h2").text(`Incorrect, ${state.incorrect_response}`);
     };
    }
 
@@ -138,23 +146,30 @@ $(".next").click(function() {
   enactPageChange(3,2);
   displayQuizStatus();
   displayQuestionOnPage();
+  // state. something here to clear the input fields text
 })
 
-// //////////////page 4 functions///////////////////////
-
-// function displayQuizFinalResults() {
-//   display `${correctAnswerTotal} /10` in .final-score
-//   if correctAnswerTotal >= 7
-//       display "You're a hair ROCKSTAR" in .final-message
-//     else if correctAnswerTotal > 3 <7
-//       display "You need some help, start talking to your stylist about your hair needs during your appointment"
-//     else display "You're in need of some serious hair 101. Fire your stylist, they should be educating you on some of these things"
-// }
+////////////////page 4 functions///////////////////////
+//displays the results of the quiz
+function displayFinalQuizResults() {
+  enactPageChange(2,4);
+  $(".final-score").text(`You got ${state.correctScore}/10 Correct`);
+  if (state.correctScore >= 8) {
+      $(".final-message").text("You're a hair ROCKSTAR!!");
+    } else if
+    (state.correctScore >= 4) {
+      $(".final-message").text("You need some help, start talking to your stylist about your hair needs during your appointment");
+    } else {
+      $(".final-message").text("You're in need of some serious hair 101. Fire your stylist, they should be educating you on some of these things");
+    }
+}
 
 //resets score stats and takes user to first page
-  function clickRetakeQuizButton() {
+  $(".retake-quiz").click(function() {
+    enactPageChange(4,1);
+    //$(event.target).parent().removeClass"highlighted");//need to get this working so it isn't held over from last click...same as row118
     state.correctScore =  0;
     state.currentQuestionNumber = 0;
-    enactPageChange(4,1);
-  }
+  })
+
 }); //closes the global object function
