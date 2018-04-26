@@ -95,6 +95,7 @@ function displayQuestionOnPage() {
    }
 //changes the color of the selection to orange, logs the answer & associated properties to the global object
    $(".answer").click(function(event) {
+     $('#error-message').text("");
      $(".answer").parent().removeClass("highlighted");
      $(event.target).parent().addClass("highlighted");
      state.userAnswer = $(event.target).attr("value");
