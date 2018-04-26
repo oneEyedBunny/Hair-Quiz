@@ -24,9 +24,9 @@ $(function(event) {
     $(event.currentTarget).addClass("highlighted");
     state.length = $(event.currentTarget).attr("data-length");
     showQuizMeButton();
-    $(".quiz-me").scrollIntoView({
-      behavior: "smooth"
-    });
+    // $(".quiz-me").scrollIntoView({
+    //   behavior: "smooth"
+    // });
   });
 
   $(".hair-content-texture").click(function(event) {
@@ -34,9 +34,9 @@ $(function(event) {
     $(event.currentTarget).addClass("highlighted");
     state.texture = $(event.currentTarget).attr("data-texture");
     showQuizMeButton();
-    $(".quiz-me").scrollIntoView({
-      behavior: "smooth"
-    });
+    // $(".quiz-me").scrollIntoView({
+    //   behavior: "smooth"
+    // });
   });
 
 //shows a button to to start the quiz once two selections have been made
@@ -94,7 +94,7 @@ function displayQuestionOnPage() {
     $(".question-text").text(currentObject.question);
     $(".question-image").attr("src", currentObject.image);
       for(let i = 0; i < currentObject.answers.length ; i ++) {
-          $(".answer-option-"+i).after(currentObject.answers[i]).attr("value", currentObject.answers[i]);
+          $("#answer-option-"+i).text(currentObject.answers[i]);
       }
       //changes the color of the selection to orange, logs the answer & associated properties to the global object
         $(".answer").click(function(event) {
