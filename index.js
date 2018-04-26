@@ -1,22 +1,18 @@
-// OPENS:
-// 1) Prior answers to clear when the next questions is asked
-// 2) Highlighted class needs to be removed from prior answer selection- 118
-// 3) Highlighted class needs to be removed from into page when quiz is re-ran- 170
-// 4) Images on page 1 aren't sized
-
-
-
 //global object and document.ready function for all
 $(function(event) {
-  var state = {
-    currentQuestionNumber: 8,
-    correctScore: 1,
-    length: "",
-    texture: "",
-    finalQuizQuestions: [],
-    correct_answer: "",
-    incorrect_response: ""
-  };
+ var state;
+ clearState()
+
+  function clearState(){
+    state = {
+      currentQuestionNumber: 0,
+      correctScore: 0,
+      length: "",
+      texture: "",
+      finalQuizQuestions: [],
+      correct_answer: "",
+    };
+  }
 
   //changes the color of the selection to orange and ensures that the alternate option is not orange
   $(".hair-content-length").click(function(event) {
@@ -24,9 +20,6 @@ $(function(event) {
     $(event.currentTarget).addClass("highlighted");
     state.length = $(event.currentTarget).attr("data-length");
     showQuizMeButton();
-    // $(".quiz-me").scrollIntoView({
-    //   behavior: "smooth"
-    // });
   });
 
   $(".hair-content-texture").click(function(event) {
@@ -34,9 +27,6 @@ $(function(event) {
     $(event.currentTarget).addClass("highlighted");
     state.texture = $(event.currentTarget).attr("data-texture");
     showQuizMeButton();
-    // $(".quiz-me").scrollIntoView({
-    //   behavior: "smooth"
-    // });
   });
 
 //shows a button to to start the quiz once two selections have been made
@@ -48,7 +38,7 @@ $(function(event) {
 
 //calls several functions when quiz me button is clicked
   $(".quiz-me").click(function() {
-    enactPageChange(1,2);
+    showPageNumber(2);
     createQuestionArray();
     displayQuizStatus();
     displayQuestionOnPage();
@@ -56,8 +46,8 @@ $(function(event) {
 
 
 //function that hides the current page and shows the next page
-function enactPageChange(currentPageNumber, nextPageNumber) {
-  $("#page-"+currentPageNumber).addClass("hidden");
+function showPageNumber(nextPageNumber) {
+  $(".page").addClass("hidden");
   $("#page-"+nextPageNumber).removeClass("hidden");
 }
 
@@ -87,8 +77,12 @@ function displayQuizStatus() {
   $(".correct-score").text(`Correct: ${state.correctScore}`);
 }
 
+
 //function that renders the question, image, and potential answers onto the page
 function displayQuestionOnPage() {
+  $(".answer-option").removeClass("highlighted");
+  $(".answer").prop('checked', false);
+
   if (state.currentQuestionNumber < state.finalQuizQuestions.length) {
     let currentObject = state.finalQuizQuestions[state.currentQuestionNumber];
     $(".question-text").text(currentObject.question);
@@ -97,53 +91,49 @@ function displayQuestionOnPage() {
           $("#answer-option-"+i).text(currentObject.answers[i]);
       }
       //changes the color of the selection to orange, logs the answer & associated properties to the global object
-        $(".answer").click(function(event) {
-          $(".answer").parent().removeClass("highlighted");
-          $(event.target).parent().addClass("highlighted");
-          state.userAnswer = $(event.target).attr("value");
-          state.correct_answer = currentObject.correct_answer;
-          state.incorrect_response = currentObject.incorrect_response;
-        })
     } else {
       displayFinalQuizResults();
     };
    }
 
+   $(".answer").click(function(event) {
+     $(".answer").parent().removeClass("highlighted");
+     $(event.target).parent().addClass("highlighted");
+     state.userAnswer = $(event.target).attr("value");
+   })
+
 //calls several functions when submit button is clicked
   $(".submit").click(function() {
-    enactPageChange(2,3)
-    checkAnswer();
+    showPageNumber(3);
     displayAnswerResults();
     displayQuizStatus();
-    //$(event.target).parent().removeClass"highlighted");//need to get this working so it isn't held over from last click..same as 170
-  })
+
+})
+
 
 ////////////////page 3 functions/////////////////////////////////////////////////////////////////////////////////
-//function to see if they got the answer right or wrong
- function checkAnswer(event) {
-   if(state.userAnswer === state.correct_answer) {
-     return true;
-    } else {
-      return false;
-   };
-  }
+
 
 //determines what image and response should be displayed on page-3
   function displayAnswerResults() {
-    if (checkAnswer() === true) {
+    let currentQuestion = state.finalQuizQuestions[state.currentQuestionNumber];
+
+    console.log(state.userAnswer)
+      console.log(currentQuestion.correct_answer)
+    if (state.userAnswer === currentQuestion.correct_answer) {
       state.correctScore++;
       $(".response-images").attr('src', "images/correct_answer.jpg");
       $(".response-answer > h2").text("Correct, go ahead twirl that hair!");
     } else {
       $(".response-images").attr('src', "images/incorrect_answer.jpg");
-      $(".response-answer > h2").text(`Incorrect, ${state.incorrect_response}`);
+      $(".response-answer > h2").text(`Incorrect, ${currentQuestion.incorrect_response}`);
     };
    }
 
 //moves the quiz forward
 $(".next").click(function() {
   state.currentQuestionNumber++;
-  enactPageChange(3,2);
+  showPageNumber(2);
   displayQuizStatus();
   displayQuestionOnPage();
   // state. something here to clear the input fields text
@@ -152,7 +142,7 @@ $(".next").click(function() {
 ////////////////page 4 functions///////////////////////
 //displays the results of the quiz
 function displayFinalQuizResults() {
-  enactPageChange(2,4);
+  showPageNumber(4);
   $(".final-score").text(`You got ${state.correctScore}/10 Correct`);
   if (state.correctScore >= 8) {
       $(".final-message").text("You're a hair ROCKSTAR!!");
@@ -166,10 +156,9 @@ function displayFinalQuizResults() {
 
 //resets score stats and takes user to first page
   $(".retake-quiz").click(function() {
-    enactPageChange(4,1);
+    showPageNumber(1);
     //$(event.target).parent().removeClass"highlighted");//need to get this working so it isn't held over from last click...same as row118
-    state.correctScore =  0;
-    state.currentQuestionNumber = 0;
+    clearState()
   })
 
 }); //closes the global object function

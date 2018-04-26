@@ -3,7 +3,7 @@ const universalQuestions = [
   {
     question: 'Where should I apply conditioner in my hair?',
     answers: ['Roots','Ends','Roots & Ends'],
-    correct_answer: 'Roots & Ends',
+    correct_answer: '2',
     incorrect_response: 'You should always apply conditioner all over to nourish your scalp and ends',
     image: "images/shampoo.jpeg",
     alt: "shampooing hair",
@@ -11,7 +11,7 @@ const universalQuestions = [
   {
     question: 'If I have a cowlick in my bangs, what should I do?',
     answers: ['Use lots of palmade to smooth it','Blowdry my bangs both directions', 'Get rid of the bangs'],
-    correct_answer: 'Blowdry my bangs both directions',
+    correct_answer: '1',
     incorrect_response:'',
     image: "images/brushing.jpg",
     alt: "brushing hair",
@@ -19,7 +19,7 @@ const universalQuestions = [
   {
     question: 'What product is best for messy/tossled styles?',
     answers: ['Sea salt spray in dry hair','Gel in wet hair', 'Oil in dry hair'],
-    correct_answer: 'Sea salt spray in dry hair',
+    correct_answer: '0',
     incorrect_response: 'You should spray some sea salt in your hair',
     image: "images/product_1.jpg",
     alt: "hair products",
@@ -27,7 +27,7 @@ const universalQuestions = [
   {
     question: 'If I see white flakes in my hair, what is it?',
     answers: ['Dandruff','Dry scalp', 'An allergic reaction'],
-    correct_answer: 'Dry scalp',
+    correct_answer: '1',
     incorrect_response:'Dandruff is a waxy sheet, this is just dry scalp. Go get some moisturizing conditioner and massage it into your scalp',
     image: "images/product_2.jpg",
     alt: "hair products",
@@ -38,7 +38,7 @@ const shortQuestions = [
   {
     question: 'How often should I get my haircut?',
     answers: ['Every 3-4 weeks','Every 4-6 weeks','Every 7-10 weeks'],
-    correct_answer: 'Every 4-6 weeks',
+    correct_answer: '1',
     incorrect_response:'In order to maintain the look of your short cut, you need to trim it ever 4-6 weeks',
     image: "images/hair_cut.jpg",
     alt: "hair cut",
