@@ -1,11 +1,13 @@
 //global object and document.ready function for all
-$(function() {
+$(function(event) {
   var state = {
     currentQuestionNumber: 0,
     correctScore: 0,
     length: "",
     texture: "",
-    finalQuizQuestions: []
+    finalQuizQuestions: [],
+    correct_answer: "",
+    incorrect_response: ""
   };
 
   //changes the color of the selection to orange and ensures that the alternate option is not orange
@@ -86,37 +88,37 @@ function displayQuestionOnPage() {
       for(let i = 0; i < currentObject.answers.length ; i ++) {
           $(".answer-option-"+i).after(currentObject.answers[i]).attr("value", currentObject.answers[i]);
       }
+      //changes the color of the selection to orange, logs the answer & associated properties to the global object
+        $(".answer").click(function(event) {
+          $(".answer").parent().removeClass("highlighted");
+          $(event.target).parent().addClass("highlighted");
+          state.userAnswer = $(event.target).attr("value");
+          state.correct_answer = currentObject.correct_answer;
+          state.incorrect_response = currentObject.incorrect_response;
+      })
+    }
    }
- }
-
- //changes the color of the selection to orange
-   $(".answer").click(function(event) {
-     $(".answer").parent().removeClass("highlighted");
-     $(event.target).parent().addClass("highlighted");
-   })
 
 //calls several functions when submit button is clicked
   $(".submit").click(function() {
-    event.preventDefault();
     enactPageChange(2,3)
     checkAnswer();
-    //   calculateCorrectAnswers();
+    //calculateCorrectAnswers();
     displayQuizStatus();
-    //   displayAnswerResults();
+    //displayAnswerResults();
   })
 
 
 // //////////////page 3 functions/////////////////////////////////////////////////////////////////////////////////
 
 //function to see if they got the answer right or wrong
- function checkAnswer() {
-   let userAnswer = $(event.currentTarget).attr("value");  //identifies their answer selection
-   console.log(userAnswer);
-   if(userAnswer === state.correct_answer) {
-     correctScore++
-    return true;
+ function checkAnswer(event) {
+   console.log(state.userAnswer);
+   if(state.userAnswer === state.correct_answer) {
+     state.correctScore++
+     return true;
     } else {
-    return false
+      return false;
    };
   }
 
