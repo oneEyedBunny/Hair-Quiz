@@ -1,6 +1,6 @@
 //global object and document.ready function for all
 $(function(event) {
- var state;
+ let state;
  clearState()
 
   function clearState(){
@@ -45,7 +45,7 @@ $(function(event) {
   })
 
 
-//function that hides the current page and shows the next page
+//function that hides the current page and shows the specified page
 function showPageNumber(nextPageNumber) {
   $(".page").addClass("hidden");
   $("#page-"+nextPageNumber).removeClass("hidden");
@@ -68,7 +68,6 @@ function createQuestionArray() {
       textureQuestions = curlyQuestions;
   }
   state.finalQuizQuestions = [...universalQuestions, ...lengthQuestions, ...textureQuestions];
-  console.log(state.finalQuizQuestions);
 }
 
 //displays the question number and the # of correct answers
@@ -77,11 +76,11 @@ function displayQuizStatus() {
   $(".correct-score").text(`Correct: ${state.correctScore}`);
 }
 
-
 //function that renders the question, image, and potential answers onto the page
 function displayQuestionOnPage() {
   $(".answer-option").removeClass("highlighted");
   $(".answer").prop('checked', false);
+  state.userAnswer = ""; //clears prior answer
 
   if (state.currentQuestionNumber < state.finalQuizQuestions.length) {
     let currentObject = state.finalQuizQuestions[state.currentQuestionNumber];
@@ -90,12 +89,11 @@ function displayQuestionOnPage() {
       for(let i = 0; i < currentObject.answers.length ; i ++) {
           $("#answer-option-"+i).text(currentObject.answers[i]);
       }
-      //changes the color of the selection to orange, logs the answer & associated properties to the global object
     } else {
       displayFinalQuizResults();
     };
    }
-
+//changes the color of the selection to orange, logs the answer & associated properties to the global object
    $(".answer").click(function(event) {
      $(".answer").parent().removeClass("highlighted");
      $(event.target).parent().addClass("highlighted");
@@ -104,22 +102,19 @@ function displayQuestionOnPage() {
 
 //calls several functions when submit button is clicked
   $(".submit").click(function() {
-    showPageNumber(3);
-    displayAnswerResults();
-    displayQuizStatus();
-
+    if(state.userAnswer !=="") {
+      showPageNumber(3);
+      displayAnswerResults();
+      displayQuizStatus();
+  } else {
+    $('#error-message').text("You need to make a selection before you can move onto the next question");
+  }
 })
 
-
 ////////////////page 3 functions/////////////////////////////////////////////////////////////////////////////////
-
-
 //determines what image and response should be displayed on page-3
   function displayAnswerResults() {
     let currentQuestion = state.finalQuizQuestions[state.currentQuestionNumber];
-
-    console.log(state.userAnswer)
-      console.log(currentQuestion.correct_answer)
     if (state.userAnswer === currentQuestion.correct_answer) {
       state.correctScore++;
       $(".response-images").attr('src', "images/correct_answer.jpg");
@@ -130,13 +125,12 @@ function displayQuestionOnPage() {
     };
    }
 
-//moves the quiz forward
+//moves the quiz forward to the next question
 $(".next").click(function() {
   state.currentQuestionNumber++;
   showPageNumber(2);
   displayQuizStatus();
   displayQuestionOnPage();
-  // state. something here to clear the input fields text
 })
 
 ////////////////page 4 functions///////////////////////
@@ -157,8 +151,10 @@ function displayFinalQuizResults() {
 //resets score stats and takes user to first page
   $(".retake-quiz").click(function() {
     showPageNumber(1);
-    //$(event.target).parent().removeClass"highlighted");//need to get this working so it isn't held over from last click...same as row118
-    clearState()
+    clearState();
+    $(".hair-content-length").removeClass("highlighted");
+    $(".hair-content-texture").removeClass("highlighted");
+    $(".quiz-me").addClass("hidden");
   })
 
 }); //closes the global object function

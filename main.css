@@ -112,6 +112,11 @@ input[type="radio"] {
   margin-right: 10px; /* spaces the text*/
 }
 
+#error-message {
+  text-align: center;
+  color: red;
+}
+
 /*Response Page...............................................*/
 .response-image-container,
 .score-container {
