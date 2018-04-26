@@ -103,11 +103,10 @@ function displayQuestionOnPage() {
   $(".submit").click(function() {
     enactPageChange(2,3)
     checkAnswer();
-    //calculateCorrectAnswers();
     displayQuizStatus();
-    //displayAnswerResults();
+    displayAnswerResults();
+    //$(event.target).parent().removeClass"highlighted");//need to get this working so it isn't held over from last click
   })
-
 
 // //////////////page 3 functions/////////////////////////////////////////////////////////////////////////////////
 
@@ -115,7 +114,6 @@ function displayQuestionOnPage() {
  function checkAnswer(event) {
    console.log(state.userAnswer);
    if(state.userAnswer === state.correct_answer) {
-     state.correctScore++
      return true;
     } else {
       return false;
@@ -123,49 +121,24 @@ function displayQuestionOnPage() {
   }
 
 //determines what image and response should be displayed on page-3
-// function displayAnswerResults() {
-//   if checkAnswer() === true
-//     displays the image correct_answer in the response_image_container
-//     displays the text "Correct, go ahead twirl that hair!"
-//    } else {
-//     displays the image incorrect_answer in the response-response_image_container
-//     displays the text associated with the object property incorrect_response
-//   }
-//  }
-//adds to the number of correct answers when they answer correctly
-// // function calculateCorrectAnswers() {
-// //   let correctAnswerTotal = 0;
-// //   if checkAnswer() is null ("aka hasn't run")
-// //     then correctAnswerTotal = 0
-// //    else if checkAnswer() is true
-// //       correctAnswerTotal++
-// //   }
+  function displayAnswerResults() {
+    if (checkAnswer() === true) {
+      state.correctScore++;
+      $(".response-images").attr('src', "images/correct_answer.jpg");
+      $(".response-answer > h2").text("Correct, go ahead twirl that hair!");
+    } else {
+      $(".response-images").attr('src', "images/incorrect_answer.jpg");
+      $(".response-answer > h2").text(state.incorrect_response);
+    };
+   }
 
-
-// // THIS IS NOT GOING TO WORK, you need to get the initial load of the question number working then increment...no global variables
-// // //displays the question number and correct number
-// // function displayQuizStatus() {
-// //   let questionNumber = 0;
-// //    display `${questionNumber}/10` in .score-score_container
-// //
-// //    display correctAnswerTotal in .score_container
-// //   }
-// //
-// //
-
-//
-// //moves from
-// function enactPageChange2() {
-//  changes the page-3 class of .visbility to display:none
-//  changes the page-2 class of .visbility to display:block
-// }
-
-//function to call
-function clickNextButton() {
+//moves the quiz forward
+$(".next").click(function() {
+  state.currentQuestionNumber++;
   enactPageChange(3,2);
-  displayQuestionOnPage();
   displayQuizStatus();
-}
+  displayQuestionOnPage();
+})
 
 // //////////////page 4 functions///////////////////////
 
