@@ -121,7 +121,7 @@ function displayQuestionOnPage() {
       $(".response-images").attr('src', "images/correct_answer.jpg");
       $(".response-answer > h2").text("Correct, go ahead twirl that hair!");
     } else {
-      $(".response-images").attr('src', "images/incorrect_answer.jpg");
+      $(".response-images").attr('src', "images/incorrect_answer.png");
       $(".response-answer > h2").text(`Incorrect, ${currentQuestion.incorrect_response}`);
     };
    }

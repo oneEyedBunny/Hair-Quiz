@@ -12,16 +12,16 @@ const universalQuestions = [
     question: 'If I have a cowlick in my bangs, what should I do?',
     answers: ['Use lots of palmade to smooth it','Blowdry my bangs both directions', 'Get rid of the bangs'],
     correct_answer: '1',
-    incorrect_response:'Dont give up those cute bangs, just blowdry them back and forth in both directions to smooth the cowlick out',
-    image: "images/brushing.jpg",
-    alt: "brushing hair",
+    incorrect_response:'dont give up those cute bangs, just blowdry them back and forth in both directions to smooth the cowlick out',
+    image: "images/options.png",
+    alt: "hair choices",
   } ,
   {
     question: 'What product is best for messy/tossled styles?',
     answers: ['Sea salt spray in dry hair','Gel in wet hair', 'Oil in dry hair'],
     correct_answer: '0',
     incorrect_response: 'you should spray some sea salt in your hair',
-    image: "images/product_1.jpg",
+    image: "images/product_3.jpg",
     alt: "hair products",
   } ,
   {
@@ -29,8 +29,8 @@ const universalQuestions = [
     answers: ['Dandruff','Dry scalp', 'An allergic reaction'],
     correct_answer: '1',
     incorrect_response:'dandruff is a waxy sheet, this is just dry scalp. Go get some moisturizing conditioner, & massage it into your scalp',
-    image: "images/product_2.jpg",
-    alt: "hair products",
+    image: "images/brushing.jpg",
+    alt: "brushing hair",
   }
 ];
 
@@ -48,15 +48,15 @@ const shortQuestions = [
     answers: ['A brush with lots of brissles', 'A wide tooth brush', 'A teasing brush'],
     correct_answer: '0',
     incorrect_response:'use a brush with lots of brissles, so you have tension to grib the hair',
-    image: "images/product_1.jpg",
-    alt: "hair products",
+    image: "images/brushing.jpg",
+    alt: "brushing hair",
   } ,
   {
     question: 'What product is best to give good hold?',
     answers: ['Palmade on dry hair','Hairspray on dry hair','Gel in wet hair'],
     correct_answer: '0',
     incorrect_response:"skip the gel and hairspray, it's soooo 90's. Palamdes come in strong hold",
-    image: "images/product_1.jpg",
+    image: "images/product_3.jpg",
     alt: "hair products",
   }
 ];
@@ -76,7 +76,7 @@ const longQuestions = [
     answers: ['Oil based cream on dry hair','hairspray on dry hair', 'anti-humidity cream on wet hair'],
     correct_answer: '2',
     incorrect_response:'anti-humidity hair creams applied to wet hair and blowdried in will provide the longest coverage',
-    image: "images/product_2.jpg",
+    image: "images/product_3.jpg",
     alt: "hair products",
   } ,
   {
@@ -103,7 +103,7 @@ const straightQuestions = [
     answers: ['Palmaide for finishing','Mousse while blowdrying', 'Texture dust on dry hair'],
     correct_answer: '2',
     incorrect_response:'texture dust is a great way to give volume that can be reactivated throughout the day',
-    image: "images/product_2.jpg",
+    image: "images/product_3.jpg",
     alt: "hair products",
   } ,
   {
@@ -111,7 +111,7 @@ const straightQuestions = [
     answers: ['Lightweight moisturizing','Volumizing', 'Clarifying'],
     correct_answer: '0',
     incorrect_response:'lighweight moisturizing will avoid weighing your hair down',
-    image: "images/product_1.jpg",
+    image: "images/product_3.jpg",
     alt: "hair products",
   }
 ];
@@ -130,7 +130,7 @@ const curlyQuestions = [
     answers: ['Heavy moisturizing','Clarifying', "Elasticity building"],
     correct_answer: '0',
     incorrect_response:'curly hair has an open cuticle and is prone to dryness, combat with a heavy moisturizing product',
-    image: "images/product_1.jpg",
+    image: "images/product_3.jpg",
     alt: "hair products",
   } ,
   {
