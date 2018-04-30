@@ -104,6 +104,9 @@ function displayQuestionOnPage() {
      state.userAnswer = $(event.target).attr("value");
      $(":input").attr("aria-checked", false);
      $(event.target).attr("aria-checked", true);
+
+     $("html, body").animate( {
+       scrollTop: $(".submit").offset().top}, 1000);
    })
 
 //calls several functions when submit button is clicked
