@@ -11,7 +11,7 @@
 </head>
 <body>
   <main role="main">
-    <header>Hair Quiz</header>
+    <header role="banner">Hair Quiz</header>
     <div class="page visibility col-12-grid" id="page-1">
       <div class="intro-statement">
         <h2>How well do you know your hair?</h2>
@@ -19,41 +19,41 @@
       <div class="intro-statement">
         <span>select two</span>
       </div>
-      <div class="selection-container col-6-grid">
-        <div class="hair-length-container">
+      <div role="radiogroup" class="selection-container">
+        <div class="hair-length-container" aria-labeledby="hair-length-options">
           <div id="card-short" class="option-1">
               <img src="images/short_hair.jpg" class="selection_images" alt="short hair"/>
-              <div class="hair-content hair-content-length" data-length="short">
+              <div role="radio" class="hair-content hair-content-length" data-length="short">
                 <h3>Short</h3>
               </div>
           </div>
 
           <div id="card-long" class="option-1">
               <img src="images/long_hair.jpg" class="selection_images" alt="long hair"/>
-              <div class="hair-content hair-content-length" data-length="long" >
+              <div role="radio" class="hair-content hair-content-length" data-length="long">
                 <h3>Long</h3>
               </div>
           </div>
         </div>
 
-        <div class="hair-texture-container">
+        <div class="hair-texture-container" aria-labeledby="hair-texture-options">
           <div id="card-straight" class="option-2">
               <img src="images/straight_hair.jpg" class="selection_images" alt=" straight hair"/>
-              <div class="hair-content hair-content-texture" data-texture="straight">
+              <div role="radio" class="hair-content hair-content-texture" data-texture="straight">
                 <h3>Straight</h3>
               </div>
           </div>
 
           <div id="card-curly" class="option-2">
               <img src="images/curly_hair.jpg" class="selection_images" alt="curly hair"/>
-              <div class="hair-content hair-content-texture" data-texture="curly" >
+              <div role="radio" class="hair-content hair-content-texture" data-texture="curly" >
                 <h3>Curly</h3>
               </div>
           </div>
         </div>
       </div>
        <div class="button-container">
-         <button class="hidden quiz-me">Quiz Me</button>
+         <button role="button" class="hidden quiz-me">Quiz Me</button>
       </div>
     </div>
 
@@ -70,23 +70,23 @@
         </div>
       </div>
       <div class="answer-selection-container">
-        <form class="answer-section">
+        <form role="form" aria-labelledby="answer-option" class="answer-section">
           <label class="answer-option">
-            <input type="radio" class="answer" value="0" name= "answer" required>
+            <input type="radio" class="answer" aria-checked="false" value="0" name= "answer" required>
             <span id="answer-option-0"></span>
           </label>
           <label class="answer-option">
-            <input type="radio" class="answer" value="1" name= "answer" required>
+            <input type="radio" class="answer" aria-checked="false" value="1" name= "answer">
             <span id="answer-option-1"></span>
           </label>
           <label class="answer-option">
-            <input type="radio" class="answer" value="2" name= "answer" required>
+            <input type="radio" class="answer" aria-checked="false" value="2" name= "answer">
             <span id="answer-option-2"></span>
           </label>
         </form>
       </div>
        <div class="button-container">
-         <button class="submit">Submit</button>
+         <button role="button" class="submit">Submit</button>
       </div>
       <h3 id="error-message"></h3>
     </div>
@@ -103,7 +103,7 @@
       <h2></h2>
     </div>
     <div class="button-container">
-      <button class="next">Next</button>
+      <button role="button" class="next">Next</button>
     </div>
   </div>
 <!--fourth "page" -->
@@ -113,7 +113,7 @@
       <div class="final-message"></div>
     </div>
     <div class="button-container">
-      <button class="retake-quiz">Retake Quiz</button>
+      <button role="button" class="retake-quiz">Retake Quiz</button>
     </div>
   </div>
 
