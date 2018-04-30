@@ -3,10 +3,6 @@
 @media only screen and (min-width: 640px) {
   /* 2 columns = 6/12= 50% */
 
- .col-6-grid {
-      width: 50%;
- }
-
  .col-12-grid {
      width: 100%;
  }
@@ -34,17 +30,13 @@
    margin: auto;
  }
 
- .question-container, .response-answer,.response-image-container, .results-container {
+ .question-container, .response-answer,.response-image-container, .results-container, .answer-option {
    width: 50%;  /*check to see if you can leave it at 65% along with mobile and delete this thing */
  }
 
- .answer-option {
-   width: 50%;
-}
-
 button {
   font-size: 20px;
-
+}
 
 .response-answer > h2 {
   margin: 35px 35px 50px 35px;
@@ -59,7 +51,18 @@ input[type="radio"] {
   font-size: 25px;
   padding: 25px;
 }
+/* @media and orientation=portrait {} */
+}
+@media only screen and (min-width: 1024px) {
 
-@media and orientation=portrait {
+  .question-image {
+    max-width: 700px;
+  }
+}
 
+@media only screen and (min-width: 1186px) {
+
+  .response-answer {
+    width: 50%;
+  }
 }

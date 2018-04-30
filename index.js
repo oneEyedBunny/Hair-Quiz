@@ -34,9 +34,9 @@ $(function(event) {
     if(state.length && state.texture !=="") {
       $(".quiz-me").removeClass("hidden");
       $("html, body").animate( {
-        scrollTop: $(".quiz-me").offset().top}, 2000)
-      }
+        scrollTop: $(".quiz-me").offset().top}, 2000);
   }
+}
 
 //calls several functions when quiz me button is clicked
   $(".quiz-me").click(function() {
@@ -78,11 +78,12 @@ function displayQuizStatus() {
   $(".correct-score").text(`Correct: ${state.correctScore}`);
 }
 
-//function that renders the question, image, and potential answers onto the page
+//function that renders the question, image, and answers onto the page
 function displayQuestionOnPage() {
+  //clears prior answer
   $(".answer-option").removeClass("highlighted");
   $(".answer").prop('checked', false);
-  state.userAnswer = ""; //clears prior answer
+  state.userAnswer = "";
 
   if (state.currentQuestionNumber < state.finalQuizQuestions.length) {
     let currentObject = state.finalQuizQuestions[state.currentQuestionNumber];
