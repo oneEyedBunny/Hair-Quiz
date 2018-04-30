@@ -73,7 +73,7 @@ const longQuestions = [
   } ,
   {
     question: 'What product is best for tameing staticy flyaways and frizz?',
-    answers: ['Oil based cream on dry hair','hairspray on dry hair', 'anti-humidity cream on wet hair'],
+    answers: ['Oil based cream on dry hair','Hairspray on dry hair', 'Anti-humidity cream on wet hair'],
     correct_answer: '2',
     incorrect_response:'anti-humidity hair creams applied to wet hair and blowdried in will provide the longest coverage.',
     image: "images/product_3.jpg",
