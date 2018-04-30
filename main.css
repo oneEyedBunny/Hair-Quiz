@@ -1,5 +1,6 @@
 @import "grid.css";
 
+/*universal stylings...............................................*/
 * {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
@@ -9,6 +10,11 @@
   display: none;
 }
 
+.highlighted {
+  background-color: #ff7f50;
+}
+
+@media only screen and (min-width: 320px) {
 header {
   background-color: #6b5c5c;
   background-image: url("https://www.transparenttextures.com/patterns/climpek.png");
@@ -18,9 +24,40 @@ header {
   margin-bottom: 35px;
 }
 
+.question-number,
+.correct-score {
+  display: inline-block;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.score-container {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+button {
+  background-color: #048a81;
+  color: white;
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/*page-1 styling...............................................*/
+.intro-statement {
+  max-width: 75%;
+  margin: auto;
+}
+
 .intro-statement > h2 {
   text-align: center;
-  font-size: 35px;
+  font-size: 20px;
 }
 
 h3 {
@@ -29,7 +66,7 @@ h3 {
 
 .intro-statement > span {
   text-align: center;
-  font-size: 25px;
+  font-size: 15px;
   display: block;
   margin: 25px 0 5px 0;
 }
@@ -40,7 +77,7 @@ h3 {
 }
 
 .selection_images {
-  max-width: 200px;
+  max-width: 125px;
   height: auto;
   border-radius: 5px;
 }
@@ -71,12 +108,13 @@ h3 {
 /*Question Page...............................................*/
 .question-container {
   text-align: center;
-  width: 50%;
-  margin: 15px auto;
+  width: 65%;
+  margin: auto;
 }
 
 .question > h2 {
   padding: 15px;
+  font-size: 20px;
 }
 
 .question-image {
@@ -90,9 +128,9 @@ h3 {
   border: 1px solid black;
   padding: 15px;
   margin: 30px auto;
-  width: 50%;
+  width: 65%;
   border-radius: 3px;
-  display: block;
+  display: flex; /*this helps w/aligning text answer*/
   transition: 0.4s ease-in-out;
   background-color: #c4c4c4;
 }
@@ -102,22 +140,26 @@ h3 {
 }
 
 input[type="radio"] {
-  flex: 0 0 auto;
-  margin-right: 10px; /* spaces the text*/
+  /* flex: 0 0 auto; */
+  margin-right: 2px; /* spaces the text after the radio*/
 }
 
+/* .answer-option > span {
+  float: left; /*this helps to align text around radio but left justified*/
+/* } */
+
 #error-message {
-  text-align: center;
+  margin: 15px auto;
   color: red;
+  max-width: 85%;
+  font-size: 18px;
 }
 
 /*Response Page...............................................*/
-.response-image-container,
-.score-container {
+.response-image-container {
   text-align: center;
-  width: 50%;
+  width: 65%;
   margin: auto;
-  font-size: 20px;
 }
 
 .response-images {
@@ -129,12 +171,12 @@ input[type="radio"] {
 
 .response-answer {
   margin: auto;
-  width: 50%;
+  width: 65%;
 }
 
 .response-answer > h2 {
   text-align: center;
-  margin: 35px 35px 50px 35px;
+  font-size: 20px;
 }
 
 .next {
@@ -146,36 +188,14 @@ input[type="radio"] {
   background-color: #ff7f50;
   border-radius: 2px;
   margin: auto;
-  width: 50%;
+  width: 65%;
   text-align: center;
 }
 
 .final-score,
 .final-message {
-  padding: 25px;
-  margin: 15px;
-  font-size: 25px;
-}
-
-/*universal stylings...............................................*/
-.highlighted {
-  background-color: #ff7f50;
-}
-.question-number,
-.correct-score {
-  display: inline-block;
   padding: 15px;
-}
-
-.button-container {
-  text-align: center;
-  margin-top: 30px;
-}
-
-button {
-  background-color: #048a81;
-  color: white;
+  margin: 15px;
   font-size: 20px;
-  padding: 8px;
-  border-radius: 5px;
+}
 }

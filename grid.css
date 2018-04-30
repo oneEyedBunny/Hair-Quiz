@@ -1,14 +1,65 @@
 
-/* Non-mobile grid */
-
+/* Non-mobile grid/styling */
 @media only screen and (min-width: 640px) {
   /* 2 columns = 6/12= 50% */
 
-  .col-6-grid {
+ .col-6-grid {
       width: 50%;
-    }
+ }
 
-  .col-12-grid {
+ .col-12-grid {
      width: 100%;
-   }
+ }
+
+ .intro-statement > h2 {
+   font-size: 35px;
+ }
+
+ .intro-statement > span {
+   font-size: 25px;
+ }
+
+ .selection_images {
+   max-width: 200px;
+ }
+
+ .question-number,
+ .correct-score {
+   display: inline-block;
+   padding: 15px;
+ }
+
+ .score-container {
+   width: 50%;
+   margin: auto;
+ }
+
+ .question-container, .response-answer,.response-image-container, .results-container {
+   width: 50%;  /*check to see if you can leave it at 65% along with mobile and delete this thing */
+ }
+
+ .answer-option {
+   width: 50%;
+}
+
+button {
+  font-size: 20px;
+
+
+.response-answer > h2 {
+  margin: 35px 35px 50px 35px;
+}
+
+input[type="radio"] {
+  margin-right: 10px; /* spaces the text*/
+}
+
+.final-score,
+.final-message {
+  font-size: 25px;
+  padding: 25px;
+}
+
+@media and orientation=portrait {
+
 }

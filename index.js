@@ -29,11 +29,13 @@ $(function(event) {
     showQuizMeButton();
   });
 
-//shows a button to to start the quiz once two selections have been made
+//shows a button to start the quiz once two selections have been made, screen scrolls to button.
   function showQuizMeButton(){
     if(state.length && state.texture !=="") {
       $(".quiz-me").removeClass("hidden");
-    }
+      $("html, body").animate( {
+        scrollTop: $(".quiz-me").offset().top}, 2000)
+      }
   }
 
 //calls several functions when quiz me button is clicked

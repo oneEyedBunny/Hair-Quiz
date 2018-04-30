@@ -1,7 +1,8 @@
 # Hair Quiz
-Thinkful Web Development Fundamentals capstone project
+Thinkful Web Development Fundamentals capstone project- Quiz App
 
 # Pending:
+1. media query for 640+ isn't working
 
-1. Need to double check responsive across a few other screen sizes
-1. Need to have a few people check/try to break app
+# Stretch goal:
+1. Get the radio button to be in the middle. vertical-align:middle isn't working
