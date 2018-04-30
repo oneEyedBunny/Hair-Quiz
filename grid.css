@@ -31,7 +31,7 @@
  }
 
  .question-container, .response-answer,.response-image-container, .results-container, .answer-option {
-   width: 50%;  /*check to see if you can leave it at 65% along with mobile and delete this thing */
+   width: 50%;
  }
 
 button {
@@ -62,7 +62,14 @@ input[type="radio"] {
 
 @media only screen and (min-width: 1186px) {
 
-  .response-answer {
-    width: 50%;
+  .question-container, .response-answer,.response-image-container, .results-container, .answer-option {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1460px) {
+
+  .question-container, .response-answer,.response-image-container, .results-container, .answer-option {
+    width: 30%;
   }
 }
