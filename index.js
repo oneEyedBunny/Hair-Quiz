@@ -69,7 +69,8 @@ function createQuestionArray() {
   } else if (state.texture ==="curly"){
       textureQuestions = curlyQuestions;
   }
-  state.finalQuizQuestions = [...universalQuestions, ...lengthQuestions, ...textureQuestions];
+  state.finalQuizQuestions = [...lengthQuestions, ...universalQuestions, ...textureQuestions,];
+  console.log(state.finalQuizQuestions);
 }
 
 //displays the question number and the # of correct answers
