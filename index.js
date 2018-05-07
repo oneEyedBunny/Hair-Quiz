@@ -116,6 +116,8 @@ function displayQuestionOnPage() {
       showPageNumber(3);
       displayAnswerResults();
       displayQuizStatus();
+      $("html, body").animate( {
+        scrollTop: $(".submit").offset().top}, 2000);
   } else {
     $('#error-message').text("You need to make a selection before you can move onto the next question");
   }
