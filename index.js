@@ -103,8 +103,6 @@ function displayQuestionOnPage() {
      $(".answer").parent().removeClass("highlighted");
      $(event.target).parent().addClass("highlighted");
      state.userAnswer = $(event.target).attr("value");
-     $(":input").attr("aria-checked", false);
-     $(event.target).attr("aria-checked", true);
 
      $("html, body").animate( {
        scrollTop: $(".submit").offset().top}, 1000);
