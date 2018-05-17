@@ -90,6 +90,7 @@ $(function(event) {
         let currentObject = state.finalQuizQuestions[state.currentQuestionNumber];
         $(".question-text").text(currentObject.question);
         $(".question-image").attr("src", currentObject.image);
+        $(".question-image").attr("alt", currentObject.alt);
         for(let i = 0; i < currentObject.answers.length ; i ++) {
           $("#answer-option-"+i).text(currentObject.answers[i]);
         }
