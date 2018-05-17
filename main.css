@@ -99,6 +99,10 @@ h3 {
 }
 
 /*Question Page...............................................*/
+fieldset {
+  border-style: none;
+}
+
 .question-container {
   text-align: center;
   width: 65%;
